@@ -15,7 +15,7 @@ var businessStatementBucket = []byte("BUSINESS_STATEMENT")
 var personalStatementBucket = []byte("PERSONAL_STATEMENT")
 
 func setupDB() (*bolt.DB, error) {
-	db, err := bolt.Open("src/gateway/main.db", 0600, &bolt.Options{Timeout: 1 * time.Second})
+	db, err := bolt.Open("main.db", 0600, &bolt.Options{Timeout: 1 * time.Second})
 	if err != nil {
 		return nil, fmt.Errorf("could not open db, %v", err)
 	}
